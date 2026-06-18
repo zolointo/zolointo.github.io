@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indie Video Game Book Club — Steam Next Fest June 2026 Rando-Bins</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #1b2838;
+            color: #c6d4df;
+            padding: 24px;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #66c0f4;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+            letter-spacing: 0.04em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7a8fa8;
+            font-size: 0.95rem;
+            margin-bottom: 36px;
+            letter-spacing: 0.02em;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .bin-card {
+            background: #16202d;
+            border: 1px solid #2a3f5f;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 28px 20px 22px;
+            gap: 14px;
+            cursor: pointer;
+            color: inherit;
+        }
+        .bin-card:hover {
+            border-color: #66c0f4;
+            box-shadow: 0 6px 24px rgba(102,192,244,0.18);
+            transform: translateY(-3px);
+        }
+        .bin-icon {
+            font-size: 2.4rem;
+            line-height: 1;
+            user-select: none;
+        }
+        .bin-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #66c0f4;
+            letter-spacing: 0.03em;
+            text-align: center;
+        }
+        .bin-sub {
+            font-size: 0.78rem;
+            color: #7a8fa8;
+            text-align: center;
+            letter-spacing: 0.01em;
+        }
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            color: #4a6080;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎮 Indie Video Game Book Club</h1>
+    <p class="subtitle">Steam Next Fest June 2026 — Rando-Bins</p>
+
+    <div class="grid" id="grid"></div>
+
+    <footer>44 rando-bins · Steam Next Fest June 2026</footer>
+
+    <script>
+        const grid = document.getElementById('grid');
+        for (let i = 1; i <= 44; i++) {
+            const a = document.createElement('a');
+            a.href = `/nextfest_june_2026/rando_bin_${i}.html`;
+            a.className = 'bin-card';
+            a.innerHTML = `
+                <div class="bin-icon">🗃️</div>
+                <div class="bin-label">Rando-Bin ${i}</div>
+                <div class="bin-sub">rando_bin_${i}.html</div>
+            `;
+            grid.appendChild(a);
+        }
+    </script>
+</body>
+</html>
